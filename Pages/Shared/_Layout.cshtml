@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Laboration1_Razor</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/Laboration1_Razor.styles.css" asp-append-version="true" /> *@
+</head>
+<body>
+    <header>
+        <div class="header-row" >
+            <h1> Laboration 1.1</h1>
+            <div class="today-date">
+                <p> Today is: @ViewData["todayDate"] </p>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <aside class="aside">
+            <nav>
+                <ul id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Razor">Razor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/About">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p> By Alaa Zaza, Contact me via: <a href = "mailto: alza2100@student.miun.se">alza2100@student.miun.se</a> </p>
+        </div>
+       
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

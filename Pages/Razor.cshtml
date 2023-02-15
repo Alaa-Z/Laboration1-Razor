@@ -1,0 +1,64 @@
+﻿@page
+@model MyApp.Namespace.RazorModel
+@{
+    ViewData["Title"] = "Razor";
+
+    // Return Date and time
+    var TodayDateAndTime = DateTime.Now;
+
+    //Return the day of the week 
+    var dayOfTheWeek = TodayDateAndTime.DayOfWeek;
+    
+    // variable to show message on the screen
+    string dateMsg;
+
+    // Control if Today is Monday
+    if(dayOfTheWeek == DayOfWeek.Monday)
+    {
+        dateMsg = "Today is Monday!";
+        
+    } else
+    {
+        dateMsg = "Today is not a Monday!";
+    }
+    
+    // List of my courses
+    string[] courses = {
+        "DT057G, Webbutveckling I",
+        "DT084G, Introduktion till programmering i JavaScript",
+        "DT163G, Digital bildbehandling för webb",
+        "DT068G, Webbanvändbarhet",
+        "DT093G, Webbutveckling II",
+        "DT003G, Databaser",
+        "DT173G, Webbutveckling III",
+        "DT197G, Webbdesign för CMS",
+        "IK060G, Projektledning",
+        "DT193G, Fullstack- utveckling med ramverk",
+        "DT071G, Programmering i C#.NET",
+        "DT162G, Javascript-baserad webbutveckling"
+    };
+}
+<div class="home">
+
+    <div>
+        <h1>Razor</h1>
+        <h2>Information</h2>
+        <p><b>Date/ Time:</b> @TodayDateAndTime</p>
+    </div>
+
+    <p>@dateMsg</p>
+    <br>
+
+    <h3>My courses:</h3>
+
+    <ul>
+        @foreach(var course in courses)
+        {
+            <li>@course</li>
+        }
+    </ul>
+</div>
+
+
+
+
